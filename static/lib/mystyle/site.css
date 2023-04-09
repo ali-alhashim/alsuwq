@@ -1,0 +1,52 @@
+.body-bg{
+  background-color: #E3E6E6;
+}
+
+.logo img
+{
+
+  max-width: 200px;
+}
+
+.location-btn
+{
+  min-height: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-fff-hover:hover
+{
+
+  border: solid #fff 1px;
+
+
+}
+
+.btn-fff-hover
+{
+    border: solid  1px;
+    padding: 5px;
+}
+
+.search-input input
+{
+min-width: 80%;
+border-radius: 5px;
+border: solid 1px green;
+background-color:  #fff;
+color: #000;
+padding: 8px;
+margin: 0;
+
+}
+.search-input select
+{
+  border-radius: 5px;
+  border: solid 1px green;
+  background-color:  #fff;
+  color: #000;
+  padding: 8px;
+  margin: 0;
+}
