@@ -32,7 +32,7 @@
 
 .search-input
 {
-  min-width: 40%;
+  min-width: 30%;
 }
 
 .search-input input
@@ -118,6 +118,8 @@ min-width: 100%;
 .newRegistration-btn
 {
   text-decoration: none;
+  color: #003aa7;
+  font-weight: bolder;
 }
 
 
