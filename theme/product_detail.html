@@ -145,28 +145,84 @@
    
         <div class="row   work-space-card">
 
+            <!--All product imges-->
             <div class="col-1">
                 <ul class="thumbnail-list">
-               <li> <img src="" width="70" height="70"/></li>
-                <li><img src="" width="70" height="70"/></li>
-                <li><img src="" width="70" height="70"/></li>
-                <li><img src="" width="70" height="70"/></li>
-                <li><img src="" width="70" height="70"/></li>
-                <li><img src="" width="70" height="70"/></li>
+               <li> <img src="../media/products/41cxY8Xe0oL._AC_SX679_.jpg"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+               <li><img src="../media/products/51n70EjUImL._AC_SX679_.jpg"   class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+                <li><img src="../media/products/51CO-7pe52L._AC_SX679_.jpg"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+                <li><img src="../media/products/41-WSlKtMuL._AC_SX679_.jpg"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+              
             </ul>
             </div>
 
-
-            <div class="col-4">
-                <img src="../media/products/514USfO9hpL._AC_SX522_.jpg" width="400" height="400"/>
+            <!--product img-->
+            <div class="col-3">
+                <img src="../media/products/41cxY8Xe0oL._AC_SX679_.jpg" width="400" class="product-img-viewer img-fluid" id="id_product_img_viewer" />
             </div>
 
-            <div class="col-4">
-                حول هذه السلعة
+            <div class="col-5">
+
+              <!--Product Title-->
+               <div class="product-title">
+                <h6> 
+                  جوال شاومي 13 برو (سيراميك اسود، RAM 12GB، تخزين 512) شاشة AMOLED ديناميكية WQHD+ 120Hz|سنابدراجون 8 جيل ثاني رائد|عدسة لايكا احترافية اختيارية|شحن 100% خلال 19 دقيقة بتقنية هايبر تشارج 120 واط
+                </h6>
+
+                <!--Store Name-->
+                <a href="" class="seller-store-link">
+                  زيارة متجر شاومي
+                </a>
+               <hr>
+
+               <!--Rating -->
+                <p class="product-rating"> <sup class="text-primary">(100)</sup>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </p>
+
+                <!--Price + VAT -->
+                <h4> 200 <sup>ريال</sup></h4>
+                <p>الأسعار تشمل ضريبة القيمة المضافة.</p>
+
+                <hr>
+
+                <!--producr description-->
+                <p>حول هذه السلعة</p>
+                <p>
+                  
+                WQHD+ dynamic 120Hz AMOLED Display
+                Leading Snapdragon 8 Gen 2
+                Leica professional optional lens
+
+                </p>
+                <hr>
+                <!--product Specifications-->
+                 <!--spec Name, Value-->
+                 <table class="table">
+
+                  <tr>
+                    <td class="fw-bold"> العلامة التجارية	</td>
+                    <td>شاومي</td>
+                  </tr>
+
+                  <tr>
+                    <td class="fw-bold">اسم الطراز</td>
+                    <td>	Xiaomi 13 Pro</td>
+                  </tr>
+                 </table>
+
+
+               </div>
             </div>
 
+            <!--Add to cart-->
             <div class="col-3 add-to-cart-card p-3">
-              <h6> 200 ريال</h6>
+              <h4> 200 <sup>ريال</sup></h4>
+
               <p> توصيل مجاني الأربعاء 19 أبريل</p>
               <p>التوصيل إلى الأوجام</p>
              
@@ -182,9 +238,20 @@
 
              <p>  يباع من مكتبة جرير</p>
              <p>يشحن من السوق</p>
+             <hr>
+             <select class="form-select">
+              <option>إضافة إلى القائمة</option>
+              <option>المفضلة</option>
+              <option>أجهزة الجوال</option>
+             </select>
 
-            </div>
+            </div> <!--end add to cart-->
 
+
+
+            <hr class="my-5">
+            
+            <h4>المنتجات المرتبطة بهذه السلعة</h4>
 
         </div>
     
@@ -306,5 +373,14 @@
 
 <!--bootstrap js-->
 <script src="../static/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!--script for this page-->
+<script>
+  function img_hover(img)
+  {
+    img_viewer = document.getElementById('id_product_img_viewer');
+    img_viewer.src = img.src;
+  }
+</script>
 </body>
 </html>
