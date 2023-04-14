@@ -211,8 +211,8 @@ footer
 .work-space-card
 {
   background-color: #fff;
-  border-radius: 10px;
-  border: 1px solid #363636;
+ 
+  border: 1px solid #bebebe;
   margin: 10px;
   padding: 10px;
 }
@@ -227,8 +227,8 @@ footer
 .add-to-cart-card
 {
   background-color: #fff;
-  border-radius: 10px;
-  border: 1px solid #363636;
+ 
+  border: 1px solid #b3b3b3;
   
 }
 
