@@ -301,7 +301,8 @@ footer
  {
   position: fixed;
   display: block;
-  top:50%
+  top:50%;
+  opacity: 0.7;
  }
 
  .hide{
@@ -323,6 +324,17 @@ footer
   padding: 2px;
  }
 
+
+ .signin-card
+ {
+
+  width: 350px;
+  height: 300px;
+  border-radius: 10px;
+  border: #a0a0a0 solid 1px;
+  padding: 10px;
+  background-color: #cfcfcf;
+ }
 
 
 

@@ -96,7 +96,7 @@
         <ul class="dropdown-menu dropdown-menu-style">
 
           <li class="p-3 text-center text-dark">
-            <a class=" btn login-btn w-100 mx-1  text-black" href="#">تسجيل الدخول</a>
+            <a class=" btn login-btn w-100 mx-1  text-black" href="signin.html">تسجيل الدخول</a>
             <br/>
             <br/>
             هل أنت مستخدم جديد؟   <a href="" class="newRegistration-btn">أبدأ من هنا</a>
@@ -144,8 +144,8 @@
 
 
       <!--show cart side navbar-->
-      <div class="show-cart-side-navbar">
-        <a href="#"><i class="bi bi-bag-fill h1"></i></a>
+      <div class="show-cart-side-navbar btn bg-light border hide" id="show-cart-navbar-id">
+        <a href="#"><i class="bi bi-bag-fill h1" onclick="showSideCartNavbar();"></i></a>
       </div>
       <!--end show cart side-->
 
@@ -160,6 +160,21 @@
     الإجمالي الفرعي
     <br/>
     300.50 <sup>ريال</sup>
+   
+    <!--cart items-->
+    <div class="border">
+    <img src="../media/products/1.jpg" width="100" class="m-2"/>
+    <p>2500 <sup>ريال</sup></p>
+    </div>
+    <!--end item-->
+
+     <!--cart items-->
+     <div class="border">
+      <img src="../media/products/1.jpg" width="100" class="m-2"/>
+      <p>2500 <sup>ريال</sup></p>
+      </div>
+      <!--end item-->
+
   </div>
 
 
@@ -925,6 +940,13 @@
   {
     cartNAVbar = document.getElementById('cart-side-navbar');
     cartNAVbar.classList.add("hide");
+    document.getElementById('show-cart-navbar-id').classList.remove('hide');
+  }
+
+  function showSideCartNavbar()
+  {
+    document.getElementById('cart-side-navbar').classList.remove('hide');
+    document.getElementById('show-cart-navbar-id').classList.add('hide');
   }
 </script>
 </body>
