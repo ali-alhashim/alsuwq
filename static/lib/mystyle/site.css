@@ -329,7 +329,7 @@ footer
  {
 
   width: 350px;
-  height: 300px;
+  height: fit-content;
   border-radius: 10px;
   border: #a0a0a0 solid 1px;
   padding: 10px;
