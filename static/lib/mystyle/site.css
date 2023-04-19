@@ -341,5 +341,11 @@ footer
    border: 1px solid #00bf63;
  }
 
+ .dashed-border
+{
+  
+  border: 3px dashed #6b6b6b;
+}
+
 
 
