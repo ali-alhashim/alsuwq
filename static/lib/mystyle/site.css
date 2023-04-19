@@ -353,5 +353,14 @@ footer
   border: 3px dashed #00bf63;
 }
 
+.my-select
+{
+  padding:7px;
+  border-radius: 5px;
+  margin: 0;
+  
+  
+}
+
 
 

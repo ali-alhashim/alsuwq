@@ -150,182 +150,90 @@
 
     <!--======================Content=========================-->
     <div class="container">
-     
-        <h4 class="my-3">
-            الحساب الخاص بك
-        </h4>
 
-        <div class="row row-cols-3"><!--row-->
+    <h4 class="my-3">  قوائمك</h4>
 
-            <!--col-->
-            <div class="col my-3">
-              <!--card-->
-              <div class="card">
-               <a href="your_account.html" class="btn btn-hover-green">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-3">
-                        <img src="../static/icons/Webiconset-Application-Register.128.png" width="70" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <h6> تسجيل الدخول و الآمان</h6>
-                        تعديل الاسم و رقم الهاتف المحمول و البريد الإلكتروني و كلمة المرور
-                   </div>
+    <hr>
+    <div class="row">
+    <div class="col-2">
 
-                   </div><!--end row-->
-                 
-                 
-                </div><!--end card body-->
-                   </a>
-              </div><!--end card-->
-              
-            </div><!--end Col-->
+        <a href="" class="btn btn-outline-dark my-3 w-100 ">
+           إضافة قائمة جديدة
 
 
-
-            <!--col-->
-            <div class="col my-3">
-              <!--card-->
-              <div class="card">
-               <a href="your_orders.html" class="btn btn-hover-green">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-3">
-                        <img src="../static/icons/Double-J-Design-Ravenna-3d-Box.256.png" width="70" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <h6> الطلبات الخاصة بك</h6>
-                        تتبع السلع أو إرجاعها أو شراؤها مرة آخرى
-                   </div>
-
-                   </div><!--end row-->
-                 
-                 
-                </div><!--end card body-->
-                   </a>
-              </div><!--end card-->
-              
-            </div><!--end Col-->
-
-
-            <!--col-->
-            <div class="col my-3">
-              <!--card-->
-              <div class="card">
-               <a href="#" class="btn btn-hover-green">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-3">
-                        <img src="../static/icons/Designcontest-Ecommerce-Business-Master-card.256.png" width="70" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <h6> مدفوعاتك</h6>
-                        الإطلاع على كل المعاملات و تعديل طرق الدفع
-                   </div>
-
-                   </div><!--end row-->
-                 
-                 
-                </div><!--end card body-->
-                   </a>
-              </div><!--end card-->
-              
-            </div><!--end Col-->
-
-
-            <!--col-->
-            <div class="col my-3">
-              <!--card-->
-              <div class="card">
-               <a href="email.html" class="btn btn-hover-green">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-3">
-                        <img src="../static/icons/Wwalczyszyn-Android-Style-Mail.256.png" width="70" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <h6> رسائلك</h6>
-                       الرسائل الصادرة و الواردة إليك
-                   </div>
-
-                   </div><!--end row-->
-                 
-                 
-                </div><!--end card body-->
-                   </a>
-              </div><!--end card-->
-              
-            </div><!--end Col-->
-
-
-            <!--col-->
-            <div class="col my-3">
-              <!--card-->
-              <div class="card">
-               <a href="your_addresses.html" class="btn btn-hover-green">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-3">
-                        <img src="../static/icons/Pixelkit-Flat-Jewels-Location.512.png" width="70" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <h6> عناوينك</h6>
-                       تعديل عناوينك
-                   </div>
-
-                   </div><!--end row-->
-                 
-                 
-                </div><!--end card body-->
-                   </a>
-              </div><!--end card-->
-              
-            </div><!--end Col-->
-
-
-
-            <!--col-->
-            <div class="col my-3">
-              <!--card-->
-              <div class="card">
-               <a href="wishlist.html" class="btn btn-hover-green">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-3">
-                        <img src="../static/icons/Oxygen-Icons.org-Oxygen-Actions-bookmark-new-list.256.png" width="70" class="img-fluid">
-                    </div>
-                    <div class="col">
-                        <h6> قوائمك</h6>
-                       عرض تعديل قوائمك
-                   </div>
-
-                   </div><!--end row-->
-                 
-                 
-                </div><!--end card body-->
-                   </a>
-              </div><!--end card-->
-              
-            </div><!--end Col-->
-
-
-
+           <i class="bi bi-menu-button-wide-fill"></i>
            
-
-             
-
-
-               
+        </a>
 
 
-               
+        <a href="" class="btn btn-outline-dark my-3 w-100 position-relative"> 
+            المفضلة
+            <i class="bi bi-stars"></i>
+            <div class="badge bg-danger position-absolute start-100 top-0">150</div>
+        </a>
+     
+    </div>
 
-              
+
+    <div class="col">
+    <table class="table w-100 table-striped table-hover bg-white rounded-3">
+        <thead>
+            <tr>
+                <td colspan="4">
+                     <input type="text" placeholder="البحث في هذه القائمة" class="w-50 p-2">
+                     <input type="submit" value="بحث" class="p-2">
+                     <select class="my-select mx-5">
+                        <option>الفلترة</option>
+                     </select>
+                </td>
+            </tr>
+        <tr>
+            <td class="text-center fw-bolder">
+              صورة المنتج
+            </td>
+            <td class="w-50 text-center fw-bolder">
+               أسم المنتج
+            </td>
+            <td class=" text-center fw-bolder">
+              السعر
+             </td>
+            <td class="text-center fw-bolder">
+              .....
+            </td>
+        </tr>
+       </thead>
+
+        <!--messages list-->
+
+        <tr class="">
+            <td class="text-center align-middle">
+                <img src="../media/products/51CO-7pe52L._AC_SX679_.jpg" width="100"/>
+            </td>
+            <td class="text-center align-middle">
+                جوال شاومي 13
+            </td>
+            <td class="text-center align-middle">
+                3600 <sup>ريال</sup>
+            </td>
+            <td class="text-center align-middle">
+               <select class="my-select">
+                <option>نقل إلى ...</option>
+                <option>عربة التسوق</option>
+               </select>
+
+               <a href="" class="btn btn-outline-dark mx-3">حذف</a>
+            </td>
+        </tr>
+
+
+       
+    </table>
+    </div> <!--end col-->
 
 
 
+   </div><!--end row-->
 
-        </div><!--end row-->
 
     </div><!--end content-->
 
