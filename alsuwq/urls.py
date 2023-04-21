@@ -29,4 +29,9 @@ urlpatterns  += i18n_patterns (
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
 
+   
+
+    path('user/',include('user.urls')),
+    path('product/',include('product.urls')),
+
 )+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

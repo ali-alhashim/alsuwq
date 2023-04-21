@@ -1,4 +1,5 @@
 {%load static %}
+
  <!--Header-->
  <nav class="navbar bg-dark  " data-bs-theme="dark">
 
@@ -22,19 +23,29 @@
    </li>
 
    <li class="nav-item my-auto">
+
+
      <!--categories-->
      <div class="dropdown">
         <a class=" dropdown-toggle dropdown-toggle-categories" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         
+          {%if LANGUAGE_CODE == 'ar'%}
          الكل
+         {%else%}
+         All
+         {%endif%}
         </a>
       
         <ul class="dropdown-menu ">
-          <li><a class="dropdown-item text-white" href="#"> السيارات</a></li>
-          <li><a class="dropdown-item text-white" href="#">الجوالات</a></li>
-          <li><a class="dropdown-item text-white" href="#">شاشات التلفاز</a></li>
+          {%for category in links%}
+          <li><a class="dropdown-item text-white" href="{{category.get_url}}">{{category.name}}</a></li>
+         
+          {%endfor%}
         </ul>
       </div>
     <!---->
+
+
   </li>
 
 <li class="nav-item my-auto search-input">
@@ -44,7 +55,11 @@
 </li>
 
 <li class="nav-item my-auto search-btn">
+
+
     <a href=""><i class="bi bi-search"></i></a>
+
+
 </li>
 
 <li class="nav-item my-auto language-tap ">
@@ -52,11 +67,36 @@
       <div class="dropdown btn-fff-hover p-3 ">
 
         <a class=" dropdown-toggle dropdown-toggle-language " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {%if LANGUAGE_CODE == 'ar'%}
             <img src="{% static 'icons/icons8_saudi_arabia_100px.png' %}" width="30"/> AR 
+            {%else%}
+            <img src="../static/icons/icons8_usa_100px.png" width="30"> EN
+            {%endif%}
+
         </a>
       
         <ul class="dropdown-menu ">
-          <li><a class="dropdown-item  text-white" href="#"><img src="../static/icons/icons8_usa_100px.png" width="30"> EN</a></li>
+          {%if LANGUAGE_CODE == 'ar'%}
+          <li>
+
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input type="hidden" name="language" value="en" />
+              <input name="next" type="hidden" value="{{ redirect_to }}">
+              <button  class="dropdown-item  text-white" type="submit"><img src="../static/icons/icons8_usa_100px.png" width="30"> EN</button>
+            </form>
+
+          </li>
+          {%else%}
+          <li>
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <input type="hidden" name="language" value="ar" />
+              <input name="next" type="hidden" value="{{ redirect_to }}">
+            <button class="dropdown-item  text-white" type="submit"><img src="{% static 'icons/icons8_saudi_arabia_100px.png' %}" width="30"/> AR</button>
+            </form>
+          </li>
+          {%endif%}
           
         </ul>
       </div>
@@ -70,15 +110,21 @@
       <div class="dropdown">
 
         <a class=" dropdown-toggle dropdown-toggle-login" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {%if LANGUAGE_CODE == 'ar'%}
            مرحباً تسجيل الدخول
            <br/>
            الحساب و القوائم
+           {%else%}
+           Hello, sign in
+           <br/>
+           Account & Lists 
+           {%endif%}
         </a>
       
         <ul class="dropdown-menu dropdown-menu-style">
 
           <li class="p-3 text-center text-dark">
-            <a class=" btn login-btn w-100 mx-1  text-black" href="signin.html">تسجيل الدخول</a>
+            <a class=" btn login-btn w-100 mx-1  text-black" href="{%url 'login'%}">تسجيل الدخول</a>
             <br/>
             <br/>
             هل أنت مستخدم جديد؟   <a href="register.html" class="newRegistration-btn">أبدأ من هنا</a>
@@ -89,7 +135,13 @@
           </li>
 
           <li class="text-center text-dark menu-login-item p-3">
-            <a href="" class="btn login-btn text-black w-100 mx-1"> مشترياتك</a>
+            <a href="" class="btn login-btn text-black w-100 mx-1"> 
+              {%if LANGUAGE_CODE == 'ar'%}
+              مشترياتك
+              {%else%}
+              Your Orders
+              {%endif%}
+            </a>
            </li>
 
            <li class="text-center text-dark menu-login-item p-3">
@@ -112,11 +164,24 @@
 </li>
 
 <li class="nav-item  btn-fff-hover my-auto p-3">
-  <a href="" class="location-btn">مشترياتك</a>
+  <a href="" class="location-btn">
+    {%if LANGUAGE_CODE == 'ar'%}
+    مشترياتك
+    {%else%}
+    Orders
+    {%endif%}
+    
+  </a>
 </li>
 
 <li class="nav-item  btn-fff-hover my-auto p-3">
-  <a href="cart.html" class="location-btn"></i><sup class="badge text-bg-danger">3000</sup><i class="bi bi-cart3 h3"></i>  عربة التسوق </a>
+  <a href="cart.html" class="location-btn"></i><sup class="badge text-bg-danger">3000</sup><i class="bi bi-cart3 h3"></i> 
+    {%if LANGUAGE_CODE == 'ar'%}
+     عربة التسوق 
+     {%else%}
+     Cart 
+     {%endif%}
+    </a>
 </li>
 
    </ul>
