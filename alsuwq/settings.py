@@ -76,6 +76,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
+                'category.context_processors.menu_links',
+
                 ## for lang.
                 'django.template.context_processors.i18n',
             ],
@@ -120,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+
 
 TIME_ZONE = 'Asia/Riyadh'
 
@@ -128,6 +130,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGE_CODE = 'ar' #default language
 
 LANGUAGES = [
                 ("ar", ("Arabic")),

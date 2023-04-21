@@ -5,13 +5,19 @@
     <ul class="nav w-100 justify-content-center">
 
    <li class="nav-item logo p-2 btn-fff-hover my-auto">
-    <a href="index.html" ><img src="{% static 'logo/alsuwq.svg' %}"/></a>
+    <a href="{%url 'home'%}" ><img src="{% static 'logo/alsuwq.svg' %}"/></a>
    </li>
     
    <li class="nav-item mx-3 btn-fff-hover">
-     <a class=" location-btn">التوصيل إلى
+     <a class=" location-btn">
+      {%if LANGUAGE_CODE == 'ar'%}
+      التوصيل إلى
+      {%else%}
+      Deliver to
+      {%endif%}
         <br/>
-        <i class="bi bi-geo-alt"></i>   المملكة العربية 
+        <i class="bi bi-geo-alt"></i>   
+        المملكة العربية 
      </a>
    </li>
 
@@ -33,7 +39,7 @@
 
 <li class="nav-item my-auto search-input">
  
-    <input type="text" placeholder="البحث في alsuwq.sa">
+    <input type="text" placeholder=" {%if LANGUAGE_CODE == 'ar'%}البحث في alsuwq.sa {%else%}Search in alsuwq....{%endif%}">
    
 </li>
 
@@ -46,7 +52,7 @@
       <div class="dropdown btn-fff-hover p-3 ">
 
         <a class=" dropdown-toggle dropdown-toggle-language " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="../static/icons/icons8_saudi_arabia_100px.png" width="30"/> AR 
+            <img src="{% static 'icons/icons8_saudi_arabia_100px.png' %}" width="30"/> AR 
         </a>
       
         <ul class="dropdown-menu ">

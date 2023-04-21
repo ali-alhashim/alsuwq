@@ -4,6 +4,17 @@
 {% load i18n %}
 
 
+{%block title%}
+
+{%if LANGUAGE_CODE == 'ar'%}
+البداية
+{%else%}
+Home
+{%endif%}
+
+
+{%endblock%}
+
 
 {%block content%}
     <!--show cart side navbar-->
