@@ -1,0 +1,119 @@
+{%load static %}
+ <!--Header-->
+ <nav class="navbar bg-dark  " data-bs-theme="dark">
+
+    <ul class="nav w-100 justify-content-center">
+
+   <li class="nav-item logo p-2 btn-fff-hover my-auto">
+    <a href="index.html" ><img src="{% static 'logo/alsuwq.svg' %}"/></a>
+   </li>
+    
+   <li class="nav-item mx-3 btn-fff-hover">
+     <a class=" location-btn">التوصيل إلى
+        <br/>
+        <i class="bi bi-geo-alt"></i>   المملكة العربية 
+     </a>
+   </li>
+
+   <li class="nav-item my-auto">
+     <!--categories-->
+     <div class="dropdown">
+        <a class=" dropdown-toggle dropdown-toggle-categories" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+         الكل
+        </a>
+      
+        <ul class="dropdown-menu ">
+          <li><a class="dropdown-item text-white" href="#"> السيارات</a></li>
+          <li><a class="dropdown-item text-white" href="#">الجوالات</a></li>
+          <li><a class="dropdown-item text-white" href="#">شاشات التلفاز</a></li>
+        </ul>
+      </div>
+    <!---->
+  </li>
+
+<li class="nav-item my-auto search-input">
+ 
+    <input type="text" placeholder="البحث في alsuwq.sa">
+   
+</li>
+
+<li class="nav-item my-auto search-btn">
+    <a href=""><i class="bi bi-search"></i></a>
+</li>
+
+<li class="nav-item my-auto language-tap ">
+      <!--lang-->
+      <div class="dropdown btn-fff-hover p-3 ">
+
+        <a class=" dropdown-toggle dropdown-toggle-language " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../static/icons/icons8_saudi_arabia_100px.png" width="30"/> AR 
+        </a>
+      
+        <ul class="dropdown-menu ">
+          <li><a class="dropdown-item  text-white" href="#"><img src="../static/icons/icons8_usa_100px.png" width="30"> EN</a></li>
+          
+        </ul>
+      </div>
+      <!---->
+</li>
+
+<!--login-->
+<li class="nav-item mx-3 btn-fff-hover">
+ 
+      <!--lang-->
+      <div class="dropdown">
+
+        <a class=" dropdown-toggle dropdown-toggle-login" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           مرحباً تسجيل الدخول
+           <br/>
+           الحساب و القوائم
+        </a>
+      
+        <ul class="dropdown-menu dropdown-menu-style">
+
+          <li class="p-3 text-center text-dark">
+            <a class=" btn login-btn w-100 mx-1  text-black" href="signin.html">تسجيل الدخول</a>
+            <br/>
+            <br/>
+            هل أنت مستخدم جديد؟   <a href="register.html" class="newRegistration-btn">أبدأ من هنا</a>
+          </li>
+
+          <li class="text-center text-dark menu-login-item p-3">
+           <a href="user_dashboard.html" class="btn login-btn text-black w-100 mx-1"> حسابك</a>
+          </li>
+
+          <li class="text-center text-dark menu-login-item p-3">
+            <a href="" class="btn login-btn text-black w-100 mx-1"> مشترياتك</a>
+           </li>
+
+           <li class="text-center text-dark menu-login-item p-3">
+            <a href="" class="btn login-btn text-black w-100 mx-1"> عناوينك</a>
+           </li>
+
+           <li class="text-center text-dark menu-login-item p-3">
+            <a href="" class="btn login-btn text-black w-100 mx-1"> قوائمك</a>
+           </li>
+
+           <li class="text-center text-dark menu-login-item p-3">
+            <a href="" class="btn login-btn text-black w-100 mx-1"> حساب البيع الخاص بك</a>
+           </li>
+
+          
+        </ul>
+      </div>
+      <!---->
+
+</li>
+
+<li class="nav-item  btn-fff-hover my-auto p-3">
+  <a href="" class="location-btn">مشترياتك</a>
+</li>
+
+<li class="nav-item  btn-fff-hover my-auto p-3">
+  <a href="cart.html" class="location-btn"></i><sup class="badge text-bg-danger">3000</sup><i class="bi bi-cart3 h3"></i>  عربة التسوق </a>
+</li>
+
+   </ul>
+   
+   </nav>
+    <!--end Header-->
