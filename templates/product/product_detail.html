@@ -52,7 +52,7 @@ Product detail
         </p>
 
         <!--Price + VAT -->
-        <h4> {{product.price | intcomma}} <sup>ريال</sup></h4>
+        <h4> {{product.price | intcomma:False}} <sup>ريال</sup></h4>
         <p>الأسعار تشمل ضريبة القيمة المضافة.</p>
 
         <hr>
@@ -86,7 +86,7 @@ Product detail
 
     <!--Add to cart-->
     <div class="col-3 add-to-cart-card p-3">
-      <h4> {{product.price | intcomma}} <sup>ريال</sup></h4>
+      <h4> {{product.price | intcomma:False}} <sup>ريال</sup></h4>
 
       <p> توصيل مجاني الأربعاء 19 أبريل</p>
       <p>التوصيل إلى الأوجام</p>
@@ -94,7 +94,7 @@ Product detail
       الكمية <input type="number" class="form-control text-center fw-bolder" value="1">
 
       <div class="text-center my-2">
-      <a href="" class="btn btn-outline-primary w-100">إضافة إلى عربة التسوق</a>
+      <a href="{%url 'add_cart' product.id %}" class="btn btn-outline-primary w-100">إضافة إلى عربة التسوق</a>
      </div>
 
      <div class="text-center my-2 ">
