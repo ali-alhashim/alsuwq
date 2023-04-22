@@ -9,6 +9,8 @@ from django.utils.encoding import force_bytes
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 
@@ -98,3 +100,12 @@ def activate(request, uidb64, token):
     else:
         messages.error(request, 'invlied activation link!') 
     return redirect('login')
+
+
+
+###################################################
+
+@login_required(login_url='login')
+def dashboard(request):
+    
+    return render(request, 'user/dashboard.html',{})

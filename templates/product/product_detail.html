@@ -1,0 +1,773 @@
+{% extends 'base.html' %}
+{%load static%}
+{% load humanize %}
+
+{%block title%}
+Product detail
+{%endblock%}
+
+{% block content%}
+
+<div class="row   work-space-card">
+
+    <!--All product imges-->
+    <div class="col-1">
+        <ul class="thumbnail-list">
+       <li> <img src="{{product.image_1.url}}"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+       <li><img src="{{product.image_2.url}}"   class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+        <li><img src="{{product.image_3.url}}"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+        <li><img src="{{product.image_4.url}}"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+      
+    </ul>
+    </div>
+
+    <!--product img-->
+    <div class="col-3">
+        <img src="{{product.image_1.url}}" width="400" class="product-img-viewer img-fluid" id="id_product_img_viewer" />
+    </div>
+
+    <div class="col-5">
+
+      <!--Product Title-->
+       <div class="product-title">
+        <h5>{{product.product_name}}</h5>
+        <h6> 
+
+          {{product.description}}
+        </h6>
+
+        <!--Store Name-->
+        <a href="" class="seller-store-link">
+         Seller :  {{product.seller.name}}
+        </a>
+       <hr>
+
+       <!--Rating -->
+        <p class="product-rating"> <sup class="text-primary">(100)</sup>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </p>
+
+        <!--Price + VAT -->
+        <h4> {{product.price | intcomma}} <sup>ريال</sup></h4>
+        <p>الأسعار تشمل ضريبة القيمة المضافة.</p>
+
+        <hr>
+
+        <!--producr description-->
+        <p>حول هذه السلعة</p>
+        <p>
+          
+        {{product.description}}
+
+        </p>
+        <hr>
+        <!--product Specifications-->
+         <!--spec Name, Value-->
+         <table class="table">
+
+          <tr>
+            <td class="fw-bold"> العلامة التجارية	</td>
+            <td>شاومي</td>
+          </tr>
+
+          <tr>
+            <td class="fw-bold">اسم الطراز</td>
+            <td>	Xiaomi 13 Pro</td>
+          </tr>
+         </table>
+
+
+       </div>
+    </div>
+
+    <!--Add to cart-->
+    <div class="col-3 add-to-cart-card p-3">
+      <h4> {{product.price | intcomma}} <sup>ريال</sup></h4>
+
+      <p> توصيل مجاني الأربعاء 19 أبريل</p>
+      <p>التوصيل إلى الأوجام</p>
+     
+      الكمية <input type="number" class="form-control text-center fw-bolder" value="1">
+
+      <div class="text-center my-2">
+      <a href="" class="btn btn-outline-primary w-100">إضافة إلى عربة التسوق</a>
+     </div>
+
+     <div class="text-center my-2 ">
+      <a href="" class="btn btn-outline-primary w-100">  اشتر الآن </a>
+     </div>
+
+     <p>  يباع من  
+        {{product.seller.name}}
+     </p>
+     <p>يشحن من السوق</p>
+     <hr>
+     <select class="form-select">
+      <option>إضافة إلى القائمة</option>
+      <option>المفضلة</option>
+      <option>أجهزة الجوال</option>
+     </select>
+
+    </div> <!--end add to cart-->
+
+
+
+    <hr class="my-5">
+    <h4>مراجعات المستخدمين</h4>
+    <div class="row">
+
+      <div class="col-3 ">
+        4.5 من 5
+        <br/>
+       مجموع عدد التقييمات 600
+        <p class="product-rating">
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-half"></i>
+        </p>
+
+        <table class="table w-100">
+
+          <tr>
+            <td>5 نجوم</td>
+            <td>
+              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 20%">20%</div>
+              </div> 
+            </td>
+          </tr>
+
+          <tr>
+            <td>4 نجوم</td>
+            <td>
+              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 50%">50%</div>
+              </div> 
+            </td>
+          </tr>
+
+          <tr>
+            <td>3 نجوم</td>
+            <td>
+              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 30%">30%</div>
+              </div> 
+            </td>
+          </tr>
+
+          <tr>
+            <td>2 نجوم</td>
+            <td>
+              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 0%">0%</div>
+              </div> 
+            </td>
+          </tr>
+
+          <tr>
+            <td>1 نجوم</td>
+            <td>
+              <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 0%">0%</div>
+              </div> 
+            </td>
+          </tr>
+
+
+        </table>
+
+
+
+      </div>
+
+      <div class="col-8">
+
+       <!--customer item review-->
+        <div class="customer-review">
+          <img src="../media/avatars/whatapp2_oJKYaJN.jpg" class="rounded-circle" width="50"> Ali Musa Alhashim
+          <br/>
+
+          <p class="product-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </p>
+          <br/>
+          <p class="rating-subject fw-bolder">الجودة ممتازة</p>
+          <p class="review-message">
+                   تم شراء هذا المنتج و الان بعد استخدام سنة افكر في طلب ثاني 
+          </p>
+          <small>تمت كتابة هذه المراجعة في المملكة العربية السعودية في 10 أبريل 2023</small>
+        </div> <!--end review-->
+
+
+         <!--customer item review-->
+         <div class="customer-review">
+          <img src="../media/avatars/whatapp2_oJKYaJN.jpg" class="rounded-circle" width="50"> Ali Musa Alhashim
+          <br/>
+
+          <p class="product-rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </p>
+          <br/>
+          <p class="rating-subject fw-bolder">الجودة ممتازة</p>
+          <p class="review-message">
+                   تم شراء هذا المنتج و الان بعد استخدام سنة افكر في طلب ثاني 
+          </p>
+          <small>تمت كتابة هذه المراجعة في المملكة العربية السعودية في 10 أبريل 2023</small>
+        </div> <!--end review-->
+      
+
+         <a href="" class="btn btn-outline-secondary">شاهد جميع المراجعات</a>
+
+
+      </div><!--end col-8-->
+
+
+
+
+    </div>
+
+    <hr class="my-5">
+    
+    <h4>المنتجات المرتبطة بهذه السلعة</h4>
+    <!--related items-->
+
+    <div class="container">
+      <div class="row">
+
+
+        <div class="MultiCarousel">
+                <div class="MultiCarousel-inner">
+
+<!--==show 20 items related to selected product ==-->
+<div class="item"><!--item start-->
+                         <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div><!--end item-->
+
+
+
+
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                         <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                      <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                       <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                         <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                        <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                    </div>
+                    <div class="item">
+                       
+                           <!--Product card-->
+<div class="col product-card-link p-0 ">
+  <a href="product_detail.html">
+  <div class="card h-100 m-1">
+    <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+    <hr>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <p class="product-rating"> <sup class="text-primary">(100)</sup>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+        <i class="bi bi-star-fill"></i>
+      </p>
+
+      <p class="card-price">2,500.00 <sup>ريال</sup></p>
+    </div>
+
+    <div class=" text-center card-footer">
+      <small class="text-muted">Added Date : april-12-2023</small>
+    </div>
+
+  </div>
+</a>
+</div><!--end product card-->
+                          
+                     
+                    </div>
+                </div>
+              
+            </div>
+      </div>
+    
+    </div>
+
+    <!--end related items-->
+   
+
+</div>
+
+
+
+
+<!--=====================end content=======================-->
+
+{%endblock%}
+
+{%block js%}
+<script>
+
+
+
+    function img_hover(img)
+    {
+      img_viewer = document.getElementById('id_product_img_viewer');
+      img_viewer.src = img.src;
+    }
+  </script>
+  {%endblock%}

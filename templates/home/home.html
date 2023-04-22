@@ -573,7 +573,7 @@ Home
           {%for product in products%}
           <!--Product card-->
           <div class="col product-card-link p-0 ">
-            <a href="product_detail.html">
+            <a href="{{product.get_url}}">
             <div class="card h-100 m-1">
               <img src="{{product.image_1.url}}" class="card-img-top p-2" alt="...">
               <hr>

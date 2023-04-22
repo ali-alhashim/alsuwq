@@ -83,7 +83,7 @@
               {% csrf_token %}
               <input type="hidden" name="language" value="en" />
               <input name="next" type="hidden" value="{{ redirect_to }}">
-              <button  class="dropdown-item  text-white" type="submit"><img src="../static/icons/icons8_usa_100px.png" width="30"> EN</button>
+              <button  class="dropdown-item  text-white" type="submit"><img src="{% static 'icons/icons8_usa_100px.png' %}" width="30"> EN</button>
             </form>
 
           </li>
@@ -141,7 +141,7 @@
           </li>
 
           <li class="text-center text-dark menu-login-item p-3">
-           <a href="user_dashboard.html" class="btn login-btn text-black w-100 mx-1"> حسابك</a>
+           <a href="{% url 'dashboard'%}" class="btn login-btn text-black w-100 mx-1"> حسابك</a>
           </li>
 
           <li class="text-center text-dark menu-login-item p-3">

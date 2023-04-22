@@ -36,4 +36,4 @@ def product_detail(request,category_slug, product_slug):
     except Exception as e:
         raise e
     
-    return render(request,'home/product_detail.html',{"product":single_product,"in_cart":in_cart})
+    return render(request,'product/product_detail.html',{"product":single_product,"in_cart":in_cart})
