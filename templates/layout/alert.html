@@ -3,10 +3,10 @@
     {% for message in messages %}
    
        
-
+        {%if message.tags == 'success'%}
        <!--success-->
         <script>
-          
+            console.log('{{message.tags}}');
             Swal.fire({
                 position: 'top-end',
                 icon: 'success',
@@ -15,6 +15,18 @@
                 timer: 1500
               })
         </script>
+
+         <!--error-->
+        {%elif message.tags == 'error'%}
+        <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '{{ message }}',
+           
+          })
+        </script>
+        {%endif%}
    
     {% endfor %}
 

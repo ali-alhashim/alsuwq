@@ -4,6 +4,8 @@
 {% block content %}
 
 
+<form action="{%url 'login'%}" method="POST">
+    {% csrf_token %}
 <div class="text-center my-5">
    
     </div>
@@ -20,5 +22,5 @@
     
     </div>
    
-
+</form>
 {% endblock content %}

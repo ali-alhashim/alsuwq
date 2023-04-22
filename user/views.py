@@ -29,4 +29,5 @@ def login(request):
           return redirect('home')
        else:
            messages.error(request, 'invalid login !')
+           
     return render(request, 'user/login.html',{})

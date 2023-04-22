@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from django.contrib.messages import constants as messages
 from pathlib import Path
 import os
 
@@ -77,6 +77,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'category.context_processors.menu_links',
+                'cart.context_processors.cart_counter',
 
                 ## for lang.
                 'django.template.context_processors.i18n',
@@ -164,11 +165,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-from django.contrib.messages import constants as messages
-MESSAGE_TAGS = {
-    messages.ERROR: 'danger',
+
+#MESSAGE_TAGS = {
+#    messages.ERROR: 'danger',
    
-}
+#}
 
 
 #SMTP Configuration

@@ -70,7 +70,7 @@
             {%if LANGUAGE_CODE == 'ar'%}
             <img src="{% static 'icons/icons8_saudi_arabia_100px.png' %}" width="30"/> AR 
             {%else%}
-            <img src="../static/icons/icons8_usa_100px.png" width="30"> EN
+            <img src="{% static 'icons/icons8_usa_100px.png' %}" width="30"> EN
             {%endif%}
 
         </a>
@@ -111,11 +111,21 @@
 
         <a class=" dropdown-toggle dropdown-toggle-login" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           {%if LANGUAGE_CODE == 'ar'%}
-           مرحباً تسجيل الدخول
+           مرحباً
+            {%if request.user%}
+            {{request.user.name}}
+            {%else%}
+            تسجيل الدخول
+            {%endif%}
            <br/>
            الحساب و القوائم
            {%else%}
-           Hello, sign in
+           Hello, 
+           {%if request.user%}
+           {{request.user.name}}
+           {%else%}
+           sign in
+           {%endif%}
            <br/>
            Account & Lists 
            {%endif%}
@@ -174,8 +184,8 @@
   </a>
 </li>
 
-<li class="nav-item  btn-fff-hover my-auto p-3">
-  <a href="cart.html" class="location-btn"></i><sup class="badge text-bg-danger">3000</sup><i class="bi bi-cart3 h3"></i> 
+<li class="nav-item  btn-fff-hover my-auto ">
+  <a href="cart.html" class="location-btn"></i><div class="badge text-bg-danger">{{cart_counter}}</div><br/><i class="bi bi-cart3 h3"></i> 
     {%if LANGUAGE_CODE == 'ar'%}
      عربة التسوق 
      {%else%}

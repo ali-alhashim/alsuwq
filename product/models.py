@@ -14,12 +14,13 @@ class Product(models.Model):
       image_2                 = models.ImageField(upload_to='photos/products', blank=True)
       image_3                 = models.ImageField(upload_to='photos/products', blank=True)
       image_4                 = models.ImageField(upload_to='photos/products', blank=True)
-
+      video                   = models.FileField(upload_to = 'videos/products',blank=True)
       stock                   = models.PositiveIntegerField(default=0)
       is_available            = models.BooleanField(default=False)
       category                = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
       created_date            = models.DateTimeField(auto_now_add=True)
       last_update             = models.DateTimeField(auto_now=True)
+      seller                  = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
 
       def __str__(self):
             return self.product_name

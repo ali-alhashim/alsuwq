@@ -6,7 +6,7 @@ from cart.models import CartItem
 from cart.views import _cart_id
 # Create your views here.
 
-
+#################################################################################################################
 def store(request, category_slug=None):
     categories = None
     products   = None
@@ -27,6 +27,7 @@ def store(request, category_slug=None):
     page_obj = paginator.get_page(page_number)
     return render(request, 'home/home.html',{"products":page_obj,"productsCount":productsCount})
 
+###############################################################################################################
 
 def product_detail(request,category_slug, product_slug):
     try:
