@@ -569,15 +569,17 @@ Home
         <h4 class="my-3">  جميع المنتجات  {{productsCount}}</h4>
         <div class="row row-cols-1 row-cols-md-4 g-4 m-1">
          
+
+          {%for product in products%}
           <!--Product card-->
           <div class="col product-card-link p-0 ">
             <a href="product_detail.html">
             <div class="card h-100 m-1">
-              <img src="../media/products/1.jpg" class="card-img-top p-2" alt="...">
+              <img src="{{product.image_1.url}}" class="card-img-top p-2" alt="...">
               <hr>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">{{product.product_name}}</h5>
+                <p class="card-text">{{product.description}}</p>
   
                 <p class="product-rating"> <sup class="text-primary">(100)</sup>
                   <i class="bi bi-star-fill"></i>
@@ -587,100 +589,25 @@ Home
                   <i class="bi bi-star-fill"></i>
                 </p>
   
-                <p class="card-price">2,500.00 <sup>ريال</sup></p>
+                <p class="card-price">{{product.price}} <sup>ريال</sup></p>
               </div>
   
               <div class=" text-center card-footer">
-                <small class="text-muted">Added Date : april-12-2023</small>
+                <small class="text-muted">{{product.created_date}}</small>
               </div>
   
             </div>
           </a>
           </div><!--end product card-->
+          {%endfor%}
         
-          <!--Product card-->
-          <div class="col product-card-link p-0 ">
-            <a href="">
-            <div class="card h-100 m-1">
-              <img src="../media/products/m1.jpg" class="card-img-top p-2" alt="...">
-              <hr>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-price">2,500.00 <sup>ريال</sup></p>
-                <p>توصيل مجاني في يوم واحد.
-                  احصل عليه بحلول غداً،13 أبريل</p>
-              </div>
+         
   
-              <div class=" text-center card-footer">
-                <small class="text-muted">Added Date : april-12-2023</small>
-              </div>
+       
   
-            </div>
-          </a>
-          </div><!--end product card-->
+        
   
-          <!--Product card-->
-          <div class="col product-card-link p-0 ">
-            <a href="">
-            <div class="card h-100 m-1">
-              <img src="../media/products/pc1.jpg" class="card-img-top p-2" alt="...">
-              <hr>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-price">2,500.00 <sup>ريال</sup></p>
-              </div>
-              
-              <div class=" text-center card-footer">
-                <small class="text-muted">Added Date : april-12-2023</small>
-              </div>
-  
-            </div>
-          </a>
-          </div><!--end product card-->
-  
-  
-           <!--Product card-->
-           <div class="col product-card-link p-0">
-            <a href="">
-            <div class="card h-100 m-1">
-              <img src="../media/products/black-t-shirt.jpg" class="card-img-top p-2" alt="...">
-              <hr>
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-price">2,500.00 <sup>ريال</sup></p>
-              </div>
-  
-              <div class=" text-center card-footer">
-                <small class="text-muted">Added Date : april-12-2023</small>
-              </div>
-  
-            </div>
-          </a>
-          </div><!--end product card-->
-  
-            <!--Product card-->
-            <div class="col product-card-link p-0">
-              <a href="">
-              <div class="card h-100 m-1">
-                <img src="../media/products/black-t-shirt.jpg" class="card-img-top p-2" alt="...">
-                <hr>
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-price">2,500.00 <sup>ريال</sup></p>
-                </div>
-    
-                <div class=" text-center card-footer">
-                  <small class="text-muted">Added Date : april-12-2023</small>
-                </div>
-    
-              </div>
-            </a>
-            </div><!--end product card-->
-          
+         
         
   
   
@@ -692,6 +619,35 @@ Home
   
       </div>
       <!--=====================end content=======================-->
+
+      <nav class="mt-4" aria-label="Page navigation sample">
+        {%if products.has_other_pages%}
+      <ul class="pagination">
+         {%if products.has_previous%}
+        <li class="page-item "><a class="page-link" href="?page={{products.previous_page_number}}">Previous</a></li>
+         {%endif%}
+
+        
+         {% for i in products.paginator.get_elided_page_range%}
+         {% if products.number ==  i %}
+         <li class="page-item active">
+           <a class="page-link" href="#">{{i}}</a>
+         </li>
+         {%else %}
+         <li class="page-item ">
+           <a class="page-link" href="?page={{i}}">{{i}}</a>
+         </li>
+         {%endif%}
+          {%endfor%}
+
+
+        {%if products.has_next%}
+        <li class="page-item"><a class="page-link" href="?page={{products.next_page_number}}">Next</a></li>
+        {%endif%}
+      </ul>
+      {%endif%}
+
+    </nav>
   
 {%endblock%}
 

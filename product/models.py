@@ -6,8 +6,10 @@ from user.models import User
 
 class Product(models.Model):
       product_name           = models.CharField(max_length=255, unique=True)
+      product_name_ar           = models.CharField(max_length=255, unique=True)
       slug                   = models.SlugField(max_length=255, unique=True)
       description            = models.TextField(blank=True)
+      description_ar            = models.TextField(blank=True)
       price                  = models.DecimalField(max_digits=13, decimal_places=2, default=0.00)
 
       image_1                 = models.ImageField(upload_to='photos/products', blank=True)
@@ -34,7 +36,9 @@ class ReviewRating(models.Model):
      product = models.ForeignKey(Product, on_delete=models.CASCADE)
      user    = models.ForeignKey(User, on_delete=models.CASCADE)
      subject = models.CharField(max_length=100, blank=True)
+     subject_ar = models.CharField(max_length=100, blank=True)
      review  = models.TextField(max_length=500, blank=True)
+     review_ar  = models.TextField(max_length=500, blank=True)
      rating  = models.FloatField()
      ip      = models.CharField(max_length=20, blank=True)
      status  = models.BooleanField(default=True)
