@@ -1,0 +1,11 @@
+{% autoescape off %}
+
+Greetings . . . {{user.name}}
+
+For Activating Your Account click on below link 
+
+http://{{domain}}{%url 'activate' uidb64=uid token=token %}
+
+if you are not registred at {{domain}} please ignore this email
+
+{% endautoescape %}

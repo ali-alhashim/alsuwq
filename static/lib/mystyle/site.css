@@ -362,5 +362,18 @@ footer
   
 }
 
+.errorlist
+{
+  background-color: rgb(247, 180, 180);
+  list-style: none;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  font-weight: bolder;
+
+}
+
 
 
