@@ -49,18 +49,19 @@
   </li>
 
 <li class="nav-item my-auto search-input">
- 
-    <input type="text" placeholder=" {%if LANGUAGE_CODE == 'ar'%}البحث في alsuwq.sa {%else%}Search in alsuwq....{%endif%}">
+  <form action="{%url 'search'%}"  method="GET">
+    <input type="text" name="keyword" placeholder=" {%if LANGUAGE_CODE == 'ar'%}البحث في alsuwq.sa {%else%}Search in alsuwq....{%endif%}">
    
 </li>
 
 <li class="nav-item my-auto search-btn">
 
 
-    <a href=""><i class="bi bi-search"></i></a>
+    <button type="submit"><i class="bi bi-search"></i></button>
 
 
 </li>
+</form>
 
 <li class="nav-item my-auto language-tap ">
       <!--lang-->
@@ -134,7 +135,11 @@
         <ul class="dropdown-menu dropdown-menu-style">
 
           <li class="p-3 text-center text-dark">
+            {%if request.user.id is not none %}
+            <a class=" btn login-btn w-100 mx-1  text-black" href="{%url 'logout'%}">تسجيل الخروج</a>
+            {%else%}
             <a class=" btn login-btn w-100 mx-1  text-black" href="{%url 'login'%}">تسجيل الدخول</a>
+            {%endif%}
             <br/>
             <br/>
             هل أنت مستخدم جديد؟   <a href="{%url 'register'%}" class="newRegistration-btn">أبدأ من هنا</a>
@@ -145,7 +150,7 @@
           </li>
 
           <li class="text-center text-dark menu-login-item p-3">
-            <a href="" class="btn login-btn text-black w-100 mx-1"> 
+            <a href="{%url 'your_orders'%}" class="btn login-btn text-black w-100 mx-1"> 
               {%if LANGUAGE_CODE == 'ar'%}
               مشترياتك
               {%else%}
@@ -155,11 +160,11 @@
            </li>
 
            <li class="text-center text-dark menu-login-item p-3">
-            <a href="" class="btn login-btn text-black w-100 mx-1"> عناوينك</a>
+            <a href="{%url 'your_addresses'%}" class="btn login-btn text-black w-100 mx-1"> عناوينك</a>
            </li>
 
            <li class="text-center text-dark menu-login-item p-3">
-            <a href="" class="btn login-btn text-black w-100 mx-1"> قوائمك</a>
+            <a href="{%url 'wishlist'%}" class="btn login-btn text-black w-100 mx-1"> قوائمك</a>
            </li>
 
            <li class="text-center text-dark menu-login-item p-3">
@@ -174,7 +179,7 @@
 </li>
 
 <li class="nav-item  btn-fff-hover my-auto p-3">
-  <a href="" class="location-btn">
+  <a href="{%url 'your_orders'%}" class="location-btn">
     {%if LANGUAGE_CODE == 'ar'%}
     مشترياتك
     {%else%}

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Your Orders
+{% endblock title %}
+
+{% block content %}
+ <!--======================Content=========================-->
+ <div class="container">
+
+    <div class=" my-3 row">
+
+     <div class="col h5">  الطلبات الخاصة بك</div>
+    
+     <div class="col"><input type="text" placeholder="البحث في كل الطلبات..." class="form-control"/></div>
+
+     <div class="col"><input type="submit" value="بحث" class="btn btn-outline-dark"></div>
+
+     <div class="col"><input type="submit" value="عرض جميع الطلبات" class="btn btn-outline-dark"></div>
+     
+    </div>
+
+    <hr>
+    <h6>
+      5 طلبات الثلاثة الاشهر الماضية
+    </h6>
+
+    <!--list of your orders-->
+
+    <!--order Card-->
+    <div class="card">
+       <div class="card-header">
+          <div class="row">
+
+           <div class="col">
+               تم تقديم الطلب
+               <br/>
+               April - 18 - 2023
+           </div>
+
+           <div class="col">
+              الإجمالي
+               <br/>
+             83.64 <sup>ريال</sup>
+           </div>
+
+           <div class="col-4">
+               الشحن إلى
+                <br/>
+          الرياض - حي الياسمين - المملكة العربية السعودية
+            </div>
+
+
+            <div class="col">
+               رقم الطلب 
+                <br/>
+                408-9543077-3789135
+            </div>
+
+          </div>
+       </div>
+       <div class="card-body">
+         
+           <div class="row">
+               <div class="col-2">
+                   <img src="../media/products/41-WSlKtMuL._AC_SX679_.jpg" width="100"/>
+               </div>
+               <div class="col text-center">
+                   جوال شاومي 13 برو (سيراميك اسود، RAM 12GB، تخزين 512) شاشة AMOLED ديناميكية WQHD+ 120Hz|سنابدراجون 8 جيل ثاني رائد|عدسة لايكا احترافية اختيارية|شحن 100% خلال 19 دقيقة بتقنية هايبر تشارج 120 واط
+               </div>
+           </div>
+
+       </div><!--end card-body-->
+       <div class="card-footer">
+           <div class="row">
+
+               <div class="col text-center">
+                   <a href="#" class="btn btn-outline-dark">أكتب مراجعة</a>
+               </div>
+
+               <div class="col text-center">
+                   <a href="#" class="btn btn-outline-dark"> عرض تفاصيل الطلب</a>
+               </div>
+
+               <div class="col text-center">
+                   <a href="#" class="btn btn-outline-dark"> فاتورة</a>
+               </div>
+           </div>
+       </div>
+
+    </div><!--end order card-->
+
+
+
+    <!--end list-->
+
+
+
+
+   </div><!--end content-->
+
+  <!--=====================end content=======================-->
+
+{% endblock content %}

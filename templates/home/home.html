@@ -19,7 +19,7 @@ Home
 {%block content%}
     <!--show cart side navbar-->
     <div class="show-cart-side-navbar btn bg-light border hide" id="show-cart-navbar-id">
-        <a href="#"><i class="bi bi-bag-fill h1" onclick="showSideCartNavbar();"></i></a>
+        <a href="#"><i class="bi bi-bag-fill h1 " onclick="showSideCartNavbar();"></i></a>
       </div>
       <!--end show cart side-->
 
@@ -59,7 +59,15 @@ Home
     <div class="container">
 
         <!--top selling items-->
-        <h4 class="my-3">المنتجات الأكثر مبيعاً</h4>
+        <h4 class="my-3">
+          {%if LANGUAGE_CODE == 'ar'%}
+          المنتجات الأكثر مبيعاً
+          {%else%}
+
+          Top 10 selling products
+          {%endif%}
+
+        </h4>
         <!--related items-->
   
         <div class="container">
@@ -75,7 +83,7 @@ Home
                         <div class="item"><!--item start-->
                                                 <!--Product card-->
                         <div class="col product-card-link p-0 ">
-                          <a href="product_detail.html">
+                          <a href="{{item.get_url}}">
                           <div class="card h-100 m-1">
                             <img src="{{item.image_1.url}}" class="card-img-top p-2" alt="...">
                             <hr>
@@ -93,7 +101,7 @@ Home
                                 <i class="bi bi-star-fill"></i>
                               </p>
                       
-                              <p class="card-price">{{item.price}} <sup>ريال</sup></p>
+                              <p class="card-price">{{item.price | intcomma:False}} <sup>ريال</sup></p>
                             </div>
                       
                             <div class=" text-center card-footer">
@@ -122,7 +130,13 @@ Home
         <!--end related items-->
         <!--end top selling items-->
        <hr>
-        <h4 class="my-3">  جميع المنتجات  {{productsCount}}</h4>
+        <h4 class="my-3"> 
+          {%if LANGUAGE_CODE == 'ar'%}
+           جميع المنتجات  {{productsCount}}
+           {%else%}
+           All products {{productsCount}}
+           {%endif%}
+          </h4>
         <div class="row row-cols-1 row-cols-md-4 g-4 m-1">
          
 

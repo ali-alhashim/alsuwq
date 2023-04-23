@@ -58,3 +58,19 @@ class User(AbstractBaseUser):
     
     def has_module_perms(self, add_label):
         return True
+    
+
+class UserAddresses(models.Model):
+    created_date  = models.DateTimeField(auto_now_add=True)
+    user          = models.ForeignKey(User, on_delete=models.CASCADE)
+    title         = models.CharField(max_length=250, default='Address title')
+    is_default    = models.BooleanField(default=False)
+    country       = models.CharField(max_length=255, default='Saudi Arabia')
+    full_name     = models.CharField(max_length=255, default='first and last name')
+    mobile        = models.CharField(max_length=50, default='00966')
+    city          = models.CharField(max_length=255, blank=True, null=True)
+    area          = models.CharField(max_length=255, blank=True, null=True)
+    province      = models.CharField(max_length=255, default='Eastern Province')
+    nearest_landmark = models.CharField(max_length=255, blank=True, null=True)
+    note          = models.TextField(max_length=500, blank=True, null=True)
+

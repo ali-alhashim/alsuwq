@@ -1,0 +1,193 @@
+{% extends 'base.html' %}
+
+{% block title %}
+payselect
+{% endblock title %}
+
+
+{% block content %}
+  <!--======================Content=========================-->
+  
+    <!--order summary-->
+    <div class="order-summary">
+        <div class="row text-center">
+         <div class="col">
+          <i class="bi bi-circle-fill "></i>
+         </div>
+  
+         <div class="col">
+          <i class="bi bi-circle-fill "></i>
+         </div>
+  
+        </div>
+        
+       
+       <hr>
+      <h6>ملخص الطلب</h6>
+     
+      <table class="table w-100">
+       <tr>
+        <td>السلع</td>
+        <td>3,000.00<sup>ريال</sup></td>
+       </tr>
+  
+       <tr>
+        <td>الشحن <br/> التسليم</td>
+        <td>250.75<sup>ريال</sup></td>
+       </tr>
+  
+       <tr>
+        <td>  
+          وديعة رسوم الاستيراد	
+        </td>
+        <td>
+         250<sup>ريال</sup>
+        </td>
+       </tr>
+  
+       <tr class="text-danger fw-bolder bg-light">
+        <td>الإجمالي</td>
+        <td class="">3,500.75<sup>ريال</sup> </td>
+       </tr>
+       <tr>
+        <td colspan="2">
+          <p class="text-center">
+            عند تأكيد طلبك, فأنت توافق على شروط وأحكام السوق و إشعار الخصوصية و شروط الاستخدام لمتجر السوق السعودي و شروط البيع.
+  تحديد الهوية مطلوب للتخليص الجمركي للشحنات التي تزيد قيمتها عن 1,000 ريال سعودي. قد يتصل بك الناقل لطلب نسخة من هويتك.
+          </p>
+        </td>
+       </tr>
+      </table>
+  
+    
+     
+  
+  
+      </div>
+  
+      <div class="container">
+          <div class="work-space-card">
+  
+          <table class="table w-100 bg-light rounded">
+              <tr>
+                  <td><h5>.1 عنوان الشحن </h5></td>
+  
+                  <td>
+                     <p>
+                          Ali Musa Omar Alhashim <br/>
+                          Saudi Arabia Eastern province <br/>
+                          8058 - Al Aujam SAFWA 32674 - 3995 <br/>
+                          Eastern Province, Safwa, Al Aujam
+                          <hr>
+                          <input type="text" placeholder="تعليمات التسليم" class="form-control">
+  
+                     </p> 
+                  </td>   
+  
+                  <td class="text-center py-5">
+                      <a href="" class="btn btn-outline-secondary">تغيير</a>
+                  </td>
+              </tr>
+          </table>
+  
+          <hr>
+          
+          <h5>.2 اختر طريقة دفع</h5>
+          
+          <table class="table">
+              <tr>
+               
+                  <td>
+                      <h6>  أدخل بطاقة هدايا أو كوبون الخصم</h6>
+                  </td>
+  
+                  <td colspan="2">
+                    <input type="text" placeholder="أدخل رمز الكوبون" class="form-control">
+                  </td>
+  
+                  <td>
+                    <a href="" class="btn btn-outline-secondary">تطبيق</a>
+                  </td>
+  
+              </tr>
+              
+              </table>
+              <br/>
+              <table class="table bg-light rounded">
+  
+              <tr>
+                  <td></td>
+                  <td><h5>بطاقات الائتمان الخاصة بك</h5></td>
+                  <td>الاسم على البطاقة</td>
+                  <td>تنتهي صلاحيته في</td>
+              </tr>
+  
+            <!--your credit cards-->
+              <tr>
+                  <td>
+                      <input type="radio" name="payment_method">
+                  </td>
+                  <td>
+                      <p>فيزا تنتهي بـ 7920</p>
+                      رقم التحقق من البطاقة <input type="password" placeholder="CVV" size="6" class="rounded text-danger">
+                  </td>
+                  <td>
+                      <p>ALI MUSA ALHASHIM</p>
+                  </td>
+  
+                  <td>
+                      12/2024
+                  </td>
+              </tr>
+  
+              <tr>
+                  <td colspan="4"> <a href="" class="btn btn-outline-secondary">أضف بطاقة إنتمان جديدة</a> </td>
+              </tr>
+  
+              <tr>
+                  <td colspan="4"><h5> .3 طرق الدفع الأخرى</h5></td>
+              </tr>
+  
+              <tr>
+                  <td>
+                      <input type="radio" name="payment_method">
+                  </td>
+                  <td>
+                     <p>
+                      الدفع عند الاستلام
+                      ادفع عند الاستلام. قد يتم تطبيق رسوم للدفع عند الاستلام بقيمة 17 ريال سعودي
+                     </p>
+                     <a href="" class="btn fw-bolder text-primary">اعرف المزيد</a>
+                  </td>
+              </tr>
+  
+              <tr >
+                  <td >
+                     <a href="" class="btn btn-outline-success">استخدم طريقة الدفع هذه</a>
+                  </td>
+              </tr>
+  
+              <tr>
+                  <td colspan="4"><h5>    .4   السلع والشحن</h5></td>
+  
+                
+              </tr>
+              <tr>
+                  <td colspan="4"> 
+                      <p class="text-danger fw-bolder">
+                          للسلعة المباعة   في السوق: عندما تضغط على زر "تأكيد طلبك"، سنرسل إليك بريداً إلكترونياً يؤكد استلام طلبك. لن يكتمل عقد شراء السلعة ما لم نرسل إليك إشعار بالبريد الإلكتروني بأنه قد تم شحن السلعة.
+                      </p>
+                  </td>
+              </tr>
+  
+  
+  
+  
+  
+          </table>
+  
+              
+          </div>
+      </div>
+     <!--=====================end content=======================-->
+{% endblock content %}

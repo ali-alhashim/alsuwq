@@ -3,6 +3,7 @@ from product.models import Product
 from django.core.paginator import Paginator
 from cart.models import Cart, CartItem
 from cart.views import _cart_id
+from django.db.models import Q
 
 def home(request):
      try:
@@ -36,3 +37,20 @@ def home(request):
     
      page_obj = paginator.get_page(page_number)
      return render(request, 'home/home.html', {"products":page_obj,"productsCount":productsCount,"cart":cart,"cartItems":cartItems,"total":total,"tax":tax,"totalNoVAT":totalNoVAT,"top10Products":top10Products})
+
+
+
+def search(request):
+    products   = None
+    productsCount = 0
+    keyword = request.GET.get('keyword')
+
+    products = Product.objects.filter( Q(product_name__icontains = keyword)|
+                                       Q(description__icontains = keyword)
+                                     )
+    productsCount = products.count()
+    page_number = request.GET.get('page')
+    paginator = Paginator(products, 9) # show 9 product per page
+    page_obj = paginator.get_page(page_number)
+
+    return render(request, 'home/home.html',{"products":page_obj,"productsCount":productsCount})

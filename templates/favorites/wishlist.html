@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Favorites
+{% endblock title %}
+
+{% block content %}
+  <!--======================Content=========================-->
+  <div class="container">
+
+    <h4 class="my-3">  قوائمك</h4>
+
+    <hr>
+    <div class="row">
+    <div class="col-2">
+
+        <a href="" class="btn btn-outline-dark my-3 w-100 ">
+           إضافة قائمة جديدة
+
+
+           <i class="bi bi-menu-button-wide-fill"></i>
+           
+        </a>
+
+
+        <a href="" class="btn btn-outline-dark my-3 w-100 position-relative"> 
+            المفضلة
+            <i class="bi bi-stars"></i>
+            <div class="badge bg-danger position-absolute start-100 top-0">150</div>
+        </a>
+     
+    </div>
+
+
+    <div class="col">
+    <table class="table w-100 table-striped table-hover bg-white rounded-3">
+        <thead>
+            <tr>
+                <td colspan="4">
+                     <input type="text" placeholder="البحث في هذه القائمة" class="w-50 p-2">
+                     <input type="submit" value="بحث" class="p-2">
+                     <select class="my-select mx-5">
+                        <option>الفلترة</option>
+                     </select>
+                </td>
+            </tr>
+        <tr>
+            <td class="text-center fw-bolder">
+              صورة المنتج
+            </td>
+            <td class="w-50 text-center fw-bolder">
+               أسم المنتج
+            </td>
+            <td class=" text-center fw-bolder">
+              السعر
+             </td>
+            <td class="text-center fw-bolder">
+              .....
+            </td>
+        </tr>
+       </thead>
+
+        <!--messages list-->
+
+        <tr class="">
+            <td class="text-center align-middle">
+                <img src="../media/products/51CO-7pe52L._AC_SX679_.jpg" width="100"/>
+            </td>
+            <td class="text-center align-middle">
+                جوال شاومي 13
+            </td>
+            <td class="text-center align-middle">
+                3600 <sup>ريال</sup>
+            </td>
+            <td class="text-center align-middle">
+               <select class="my-select">
+                <option>نقل إلى ...</option>
+                <option>عربة التسوق</option>
+               </select>
+
+               <a href="" class="btn btn-outline-dark mx-3">حذف</a>
+            </td>
+        </tr>
+
+
+       
+    </table>
+    </div> <!--end col-->
+
+
+
+   </div><!--end row-->
+
+
+    </div><!--end content-->
+
+   <!--=====================end content=======================-->
+{% endblock content %}
+

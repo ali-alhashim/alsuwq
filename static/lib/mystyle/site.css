@@ -51,8 +51,7 @@ min-width: 100%;
 }
 .dropdown-toggle-categories
 {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  
   text-decoration: none;
   border-bottom: solid 1px green;
   border-top: solid 1px green;
@@ -82,15 +81,13 @@ min-width: 100%;
 
 
 
-.search-btn a
+.search-btn button
 {
   background-color: #00bf63;
-  padding: 8px;
+  padding: 6px;
   margin: 0;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom: solid 1px green;
-  border-top: solid 1px green;
+  
+ 
   border-right: none;
   color: #000;
   font-size: large;

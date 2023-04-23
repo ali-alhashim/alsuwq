@@ -28,11 +28,16 @@ urlpatterns = [
 urlpatterns  += i18n_patterns (
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('search/', views.search, name='search'),
 
    
 
     path('user/',include('user.urls')),
     path('product/',include('product.urls')),
-     path('cart/',include('cart.urls')),
+    path('cart/',include('cart.urls')),
+    path('order/',include('order.urls')),
+    path('favorites/',include('favorites.urls')),
+    path('internal_email/', include('internal_email.urls')),
+     
 
 )+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -14,9 +14,17 @@ Product detail
     <div class="col-1">
         <ul class="thumbnail-list">
        <li> <img src="{{product.image_1.url}}"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+       {%if product.image_2%}
        <li><img src="{{product.image_2.url}}"   class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+       {%endif%}
+
+       {%if product.image_3%}
         <li><img src="{{product.image_3.url}}"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+        {%endif%}
+
+        {%if product.image_4%}
         <li><img src="{{product.image_4.url}}"  class="img-thumbnail my-1 img-thumbnail-product"  onmouseover="img_hover(this);"/></li>
+        {%endif%}
       
     </ul>
     </div>
