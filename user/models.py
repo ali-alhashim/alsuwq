@@ -39,6 +39,8 @@ class User(AbstractBaseUser):
     email            = models.EmailField(max_length=255, unique=True)
     mobile           = models.CharField(max_length=50)
     address          = models.TextField(max_length=500, blank=True, null=True)
+    is_seller        = models.BooleanField(default=False)
+    national_identity_number = models.CharField(max_length=50, blank=True, null=True)
 
     date_joined      = models.DateTimeField(auto_now_add=True)
     last_login       = models.DateTimeField(auto_now_add=True)
